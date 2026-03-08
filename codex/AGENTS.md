@@ -2,63 +2,29 @@
 
 ## Python Coding Style
 
-This project follows the style implied by `../py_guide.py`.
-When writing or updating Python code, follow these rules.
+Python code in this project must follow PEP 8, with clear comments and docstrings.
 
-## 1. File Header and Module Docstring
+## Code Rules
 
-- Use shebang for executable scripts: `#!/usr/bin/env python`
-- Use UTF-8 encoding declaration when needed: `# -*- coding: UTF-8 -*-`
-- Write a module docstring in triple quotes.
-- The first docstring line is a one-sentence summary ending with a period.
-- Leave one blank line after the summary line, then provide details.
-- Add a short usage example when it improves clarity.
+- Follow PEP 8 for formatting, naming, imports, and layout.
+- Keep line length within PEP 8 limits (usually 79 for code, 72 for docs where practical).
+- Use 4-space indentation; never use tabs.
+- Group imports as standard library, third-party, and local, with one blank line between groups.
+- Remove unused imports and dead code.
+- Use `snake_case` for functions/variables/modules, `PascalCase` for classes, and `UPPER_CASE` for constants.
+- Prefer small, single-responsibility functions and methods.
+- Write comments in clear English, accurate to behavior, and synchronized with code changes.
+- Use inline comments only when logic is not self-evident; avoid obvious comments.
+- Add docstrings for public modules/classes/functions/methods.
+- Use a consistent docstring style (Google preferred), with `Args:`, `Returns:`, and `Raises:` when applicable.
+- Keep docstring summaries concise and end the first sentence with a period.
+- Add type hints for public function/method parameters and return values.
+- Prefer modern types (for example `str | None`) and explicit `typing` types when they improve readability.
+- Use UTF-8 encoding, LF line endings for text files, and remove trailing whitespace.
 
-## 2. Import Order
+## Commit Message Rules
 
-- Group imports into three blocks with one blank line between blocks.
-- Standard library imports first (for example `os`, `sys`, `typing`).
-- Third-party imports second (for example `numpy`).
-- Local project imports last (for example `from myproject...`).
-- Avoid unused imports.
-
-## 3. Naming and Constants
-
-- Use `snake_case` for functions and variables.
-- Use `PascalCase` for classes.
-- Use uppercase with underscores for module constants (for example `CONST_VALUE`).
-- Prefer clear names and avoid spelling mistakes.
-
-## 4. Type Hints
-
-- Add type hints to public function and method parameters and returns.
-- Use modern union syntax `|` (for example `bytes | str`, `bool | None`).
-- Use explicit container types from `typing` where helpful
-  (for example `Mapping[str, tuple[str, ...]]`, `Sequence[...]`).
-
-## 5. Docstring Format (Google Style)
-
-- Add docstrings to modules, public functions, methods, and classes.
-- Function docstrings should include sections when relevant:
-- `Args:`
-- `Returns:`
-- `Raises:`
-- Class docstrings should include `Attributes:` when useful.
-- Keep summaries concise and ensure examples match real behavior.
-
-## 6. Classes and Methods
-
-- Keep `__init__` focused on explicit state initialization.
-- Public methods should describe behavior and key constraints.
-- Prefer short methods with single responsibility.
-
-## 7. Readability and Consistency
-
-- Keep spacing, indentation, and structure consistent.
-- When refactoring, update type hints and docstrings with code changes.
-
-## 8. File Encoding and Whitespace Hygiene
-
-- Keep source files in UTF-8 encoding.
-- Use Unix line endings (`LF`) for text files.
-- Automatically remove trailing whitespace on save or via formatting tools.
+- Commit messages must be written in English.
+- Every commit message must include a gitmoji prefix.
+- Recommended format: `<gitmoji> <type>(<scope>): <summary>`.
+- Keep the summary concise and action-oriented.

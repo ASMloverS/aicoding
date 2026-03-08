@@ -2,48 +2,72 @@
 
 > 统一的 AI 编程助手代码风格配置标准 / Unified coding style standards for AI programming assistants
 
-本项目旨在为不同的 AI 编程助手和代理建立统一的 Python 代码风格指南和文档标准，确保在各种 AI 驱动的开发工具之间保持一致的代码风格。
+本项目为不同的 AI 编程助手和代理建立统一的代码风格指南（基于 PEP 8）、Git 提交规范（gitmoji）以及模型配置模板，确保在各种 AI 驱动的开发工具之间保持一致的代码风格和工作流。
 
-This project establishes unified Python coding style guidelines and documentation standards for various AI programming assistants and agents, ensuring consistent code style across different AI-powered development tools.
+This project establishes unified coding style guidelines (based on PEP 8), Git commit conventions (gitmoji), and model configuration templates for various AI programming assistants and agents.
 
 ## Project Structure
 
 ```
 aicoding/
-├── py_guide.py          # Python 代码风格参考模板 / Python style guide reference
-├── claude/              # Claude Code 配置指南 / Claude Code guidelines
-├── codex/               # Codex AI 代理指南 / Codex AI agent guidelines
-├── kimi/                # Kimi AI 代理指南 (中文) / Kimi AI agent guidelines (Chinese)
-└── opencode/            # OpenCode 代理指南 / OpenCode agent guidelines
+├── claude/                  # Claude Code 配置 / Claude Code config
+│   ├── CLAUDE.md            #   代码风格与提交规范 / Style & commit guidelines
+│   ├── settings.glm.json    #   GLM 模型配置 / GLM model config
+│   └── settings.minimax.json#   MiniMax 模型配置 / MiniMax model config
+├── codex/                   # Codex AI 代理指南 / Codex AI agent guidelines
+│   └── AGENTS.md
+├── kimi/                    # Kimi AI 代理指南 / Kimi AI agent guidelines
+│   └── AGENTS.md
+├── opencode/                # OpenCode 代理指南与配置 / OpenCode agent guidelines & config
+│   ├── AGENTS.md
+│   ├── opencode.glm.json    #   GLM 模型配置 / GLM model config
+│   └── opencode.minimax.json#   MiniMax 模型配置 / MiniMax model config
+└── skills/                  # Claude Code 技能 / Claude Code skills
+    ├── pyinit/              #   Python 项目初始化 (EN) / Python project init (EN)
+    ├── pyinit-cn/           #   Python 项目初始化 (CN) / Python project init (CN)
+    └── pyinit.skill         #   技能定义文件 / Skill definition file
 ```
 
 ## Components
 
-| Directory | Description | Language |
-|-----------|-------------|----------|
-| `claude/` | Claude Code specific guidance | English |
-| `codex/` | Codex AI agent guidelines | English |
-| `kimi/` | Kimi AI agent guidelines | Chinese |
-| `opencode/` | OpenCode agent guidelines | English |
+| Directory | Description | Key Content |
+|-----------|-------------|-------------|
+| `claude/` | Claude Code configuration | Style guide, commit conventions, model configs |
+| `codex/` | Codex AI agent guidelines | PEP 8 code rules, commit message rules |
+| `kimi/` | Kimi AI agent guidelines | Coding standards, gitmoji commit conventions |
+| `opencode/` | OpenCode agent guidelines | Build commands, style guide, model configs |
+| `skills/` | Claude Code reusable skills | Python project scaffolding (EN & CN) |
 
-## Python Style Guide
+## Coding Style
 
-The `py_guide.py` file serves as the canonical reference for Python coding style, covering:
+All AI assistants share a unified Python coding style based on **PEP 8 / PEP 257**:
 
-- File headers (shebang, encoding declaration)
-- Module docstrings with usage examples
-- Import ordering (standard library → third-party → local)
-- Type hints using modern Python 3.10+ syntax (`|` unions)
-- Function docstrings with tree-style formatting
-- Class docstrings with Attributes section
-- Constants naming conventions (UPPER_SNAKE_CASE)
+- UTF-8 encoding, Unix line endings (LF), 4-space indentation
+- Max line length: 79 (code) / 72 (docstrings & comments)
+- Import order: stdlib → third-party → local (separated by blank lines)
+- Naming: `snake_case` (functions/variables), `PascalCase` (classes), `UPPER_SNAKE_CASE` (constants)
+- Type hints required (Python 3.10+ `|` union syntax)
+- Google-style docstrings with `Args:`, `Returns:`, `Raises:` sections
+
+## Git Commit Convention
+
+All assistants follow the **gitmoji** commit format:
+
+```
+<gitmoji> <type>(<scope>): <description>
+```
+
+Examples:
+- `:sparkles: feat(auth): add OAuth2 login support`
+- `:bug: fix(parser): handle empty input gracefully`
+- `:memo: docs(README): update installation instructions`
 
 ## Supported AI Assistants
 
 - [Claude Code](https://claude.com/claude-code)
 - Codex AI
 - [Kimi AI](https://kimi.moonshot.cn/)
-- OpenCode
+- [OpenCode](https://opencode.ai/)
 
 ## License
 
