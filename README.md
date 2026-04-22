@@ -10,29 +10,34 @@ This project establishes unified coding style guidelines (based on PEP 8), Git c
 
 ```
 aicoding/
-├── claude/                  # Claude Code 配置 / Claude Code config
-│   ├── CLAUDE.md            #   代码风格与提交规范 / Style & commit guidelines
-│   ├── settings.glm.json    #   GLM 模型配置 / GLM model config
-│   └── settings.minimax.json#   MiniMax 模型配置 / MiniMax model config
-├── codex/                   # Codex AI 代理指南 / Codex AI agent guidelines
+├── .claude/                     # Claude Code 本地设置 / Claude Code local settings
+│   └── settings.local.json
+├── claude/                      # Claude Code 配置 / Claude Code config
+│   ├── CLAUDE.md                #   代码风格与提交规范 / Style & commit guidelines
+│   ├── USER_CLAUDE.md           #   用户级自定义配置 / User-level custom config
+│   ├── settings.glm.json        #   GLM 模型配置 / GLM model config
+│   ├── settings.kimi.json       #   Kimi 模型配置 / Kimi model config
+│   └── settings.minimax.json    #   MiniMax 模型配置 / MiniMax model config
+├── codex/                       # Codex AI 代理指南 / Codex AI agent guidelines
 │   └── AGENTS.md
-├── kimi/                    # Kimi AI 代理指南 / Kimi AI agent guidelines
+├── kimi/                        # Kimi AI 代理指南 / Kimi AI agent guidelines
 │   └── AGENTS.md
-├── opencode/                # OpenCode 代理指南与配置 / OpenCode agent guidelines & config
+├── opencode/                    # OpenCode 代理指南与配置 / OpenCode agent guidelines & config
 │   ├── AGENTS.md
-│   ├── opencode.glm.json    #   GLM 模型配置 / GLM model config
-│   └── opencode.minimax.json#   MiniMax 模型配置 / MiniMax model config
-└── skills/                  # Claude Code 技能 / Claude Code skills
-    ├── pyinit/              #   Python 项目初始化 (EN) / Python project init (EN)
-    ├── pyinit-cn/           #   Python 项目初始化 (CN) / Python project init (CN)
-    └── pyinit.skill         #   技能定义文件 / Skill definition file
+│   ├── opencode.glm.json        #   GLM 模型配置 / GLM model config
+│   └── opencode.minimax.json    #   MiniMax 模型配置 / MiniMax model config
+└── skills/                      # Claude Code 技能 / Claude Code skills
+    ├── pyinit/                  #   Python 项目初始化 (EN) / Python project init (EN)
+    ├── pyinit-cn/               #   Python 项目初始化 (CN) / Python project init (CN)
+    └── pyinit.skill             #   技能定义文件 / Skill definition file
 ```
 
 ## Components
 
 | Directory | Description | Key Content |
 |-----------|-------------|-------------|
-| `claude/` | Claude Code configuration | Style guide, commit conventions, model configs |
+| `.claude/` | Claude Code local settings | Local project settings |
+| `claude/` | Claude Code configuration | Style guide, commit conventions, model configs (GLM/Kimi/MiniMax) |
 | `codex/` | Codex AI agent guidelines | PEP 8 code rules, commit message rules |
 | `kimi/` | Kimi AI agent guidelines | Coding standards, gitmoji commit conventions |
 | `opencode/` | OpenCode agent guidelines | Build commands, style guide, model configs |
